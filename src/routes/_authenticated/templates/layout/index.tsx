@@ -24,16 +24,16 @@ function TemplatesLayoutIndex() {
       url: '/templates/layout/standard-list-layout',
     },
     {
-      title: t('templates.dashboardTopNav'),
-      description: t('templates.dashboardTopNavDesc'),
+      title: t('templates.topNavLayout'),
+      description: t('templates.topNavLayoutDesc'),
       icon: PanelTop,
-      url: '/templates/layout/dashboard-top-nav',
+      url: '/templates/layout/top-nav-layout',
     },
     {
-      title: t('templates.dashboardTitleNav'),
-      description: t('templates.dashboardTitleNavDesc'),
+      title: t('templates.tabLayout'),
+      description: t('templates.tabLayoutDesc'),
       icon: Columns,
-      url: '/templates/layout/dashboard-title-nav',
+      url: '/templates/layout/tab-layout',
     },
   ]
 

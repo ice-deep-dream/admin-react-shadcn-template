@@ -37,13 +37,14 @@ export function CommandMenu() {
         <ScrollArea type='hover' className='h-72 pe-1'>
           <CommandEmpty>{t('common.noResultsFound')}</CommandEmpty>
           {sidebarData.navGroups.map((group) => (
-            <CommandGroup key={group.title} heading={group.title}>
+            <CommandGroup key={group.title} heading={t(group.title)}>
               {group.items.map((navItem, i) => {
+                const translatedNavTitle = t(navItem.title)
                 if (navItem.url)
                   return (
                     <CommandItem
                       key={`${navItem.url}-${i}`}
-                      value={navItem.title}
+                      value={translatedNavTitle}
                       onSelect={() => {
                         runCommand(() => navigate({ to: navItem.url }))
                       }}
@@ -51,24 +52,27 @@ export function CommandMenu() {
                       <div className='flex size-4 items-center justify-center'>
                         <ArrowRight className='size-2 text-muted-foreground/80' />
                       </div>
-                      {navItem.title}
+                      {translatedNavTitle}
                     </CommandItem>
                   )
 
-                return navItem.items?.map((subItem, i) => (
-                  <CommandItem
-                    key={`${navItem.title}-${subItem.url}-${i}`}
-                    value={`${navItem.title}-${subItem.url}`}
-                    onSelect={() => {
-                      runCommand(() => navigate({ to: subItem.url }))
-                    }}
-                  >
-                    <div className='flex size-4 items-center justify-center'>
-                      <ArrowRight className='size-2 text-muted-foreground/80' />
-                    </div>
-                    {navItem.title} <ChevronRight /> {subItem.title}
-                  </CommandItem>
-                ))
+                return navItem.items?.map((subItem, i) => {
+                  const translatedSubTitle = t(subItem.title)
+                  return (
+                    <CommandItem
+                      key={`${navItem.title}-${subItem.url}-${i}`}
+                      value={`${translatedNavTitle}-${translatedSubTitle}`}
+                      onSelect={() => {
+                        runCommand(() => navigate({ to: subItem.url }))
+                      }}
+                    >
+                      <div className='flex size-4 items-center justify-center'>
+                        <ArrowRight className='size-2 text-muted-foreground/80' />
+                      </div>
+                      {translatedNavTitle} <ChevronRight /> {translatedSubTitle}
+                    </CommandItem>
+                  )
+                })
               })}
             </CommandGroup>
           ))}

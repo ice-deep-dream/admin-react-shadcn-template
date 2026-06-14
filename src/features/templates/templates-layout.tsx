@@ -40,19 +40,19 @@ export function TemplatesLayout() {
 
         {/* 模板卡片网格 */}
         <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
-          {/* Dashboard Top Nav Template Card */}
+          {/* Top Nav Layout Template Card */}
           <TemplateCard
-            title={t('templates.dashboardTopNav')}
-            description={t('templates.dashboardTopNavDesc')}
-            href='/templates/dashboard-top-nav'
+            title={t('templates.topNavLayout')}
+            description={t('templates.topNavLayoutDesc')}
+            href='/templates/layout/top-nav-layout'
             tags={['Dashboard', 'TopNav', 'Tabs']}
           />
 
-          {/* Dashboard Title Nav Template Card */}
+          {/* Tab Layout Template Card */}
           <TemplateCard
-            title={t('templates.dashboardTitleNav')}
-            description={t('templates.dashboardTitleNavDesc')}
-            href='/templates/dashboard-title-nav'
+            title={t('templates.tabLayout')}
+            description={t('templates.tabLayoutDesc')}
+            href='/templates/layout/tab-layout'
             tags={['Dashboard', 'TitleNav', 'Toolbar']}
           />
 
@@ -60,7 +60,7 @@ export function TemplatesLayout() {
           <TemplateCard
             title={t('templates.userSearchExample')}
             description={t('templates.userSearchExampleDesc')}
-            href='/templates/user-search'
+            href='/templates/components/user-search'
             tags={['Component', 'Search', 'MultiSelect']}
           />
 

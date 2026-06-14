@@ -62,12 +62,12 @@ export default function TopNavLayout() {
           <div>
             <div className='flex items-center gap-2'>
               <h1 className='text-2xl font-bold tracking-tight'>
-                {t('templates.dashboardTopNav')}
+                {t('templates.topNavLayout')}
               </h1>
               <Badge variant='secondary'>Layout</Badge>
             </div>
             <p className='text-muted-foreground'>
-              {t('templates.dashboardTopNavDesc')}
+              {t('templates.topNavLayoutDesc')}
             </p>
           </div>
           {/* 右侧主要操作按钮 */}
